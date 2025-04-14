@@ -1,0 +1,358 @@
+
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 76%;
+    gap: 60px;
+    padding: 20px;
+    margin: 50px auto;
+   
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+  
+  .contact-container:hover {
+    transform: translateY(-10px); /* Optional: Adds slight elevation */
+  }
+  
+  .contact-form-box {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Smooth hover effect */
+  .contact-form-box:hover {
+    transform: scale(1.02); /* Optional: Adds slight scale on hover */
+  }
+  
+
+/* Left Section - Info (No Box) */
+.contact-info {
+    flex: 1;
+    text-align: left;
+    color: white;
+}
+.contact-info h1,
+.contact-form-box h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff4e8a, #ff9800); /* Pink to Orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+.contact-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-details span {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+/* Right Section - Contact Form (Inside Box) */
+.contact-form-box {
+    flex: 1;
+    pointer-events: auto;
+ 
+    background: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    color: white;
+ 
+}
+
+/* Form Styling */
+.contact-form-box h1 {
+    text-align: center; /* Centers text */
+    width: 100%; /* Ensures full width usage */
+    margin-bottom: 20px; 
+    margin-top: 30px
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the form */
+    width: 100%; /* Ensures full width usage */
+}
+/* Labels Stay Left-Aligned */
+label {
+    align-self: flex-start; /* Keeps the label left-aligned */
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: white;
+    width: 80%; /* Matches input width */
+}
+
+/* Centered Input Boxes (Not Labels) */
+.form-input,
+.form-textarea {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    display: block;
+    text-align: left;  /* Changed from center to left */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group label {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    color: #a8b2d1;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-input:focus ~ label,
+.form-textarea:focus ~ label,
+.form-input:not(:placeholder-shown) ~ label,
+.form-textarea:not(:placeholder-shown) ~ label {
+    top: -12px;
+    left: 10px;
+    transform: translateY(0);
+    font-size: 14px;
+    font-weight: 600;
+    color: #2196f3;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-textarea {
+    height: 120px;
+    resize: none;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   
+    .contact-container {
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+    }
+
+    .contact-form-box {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        width: 100%;
+        text-align: left;
+    }
+
+    .form-group label {
+        left: 15px;
+        transform: translateY(-50%);
+        text-align: left;
+    }
+
+    .form-input:focus ~ label,
+    .form-textarea:focus ~ label,
+    .form-input:not(:placeholder-shown) ~ label,
+    .form-textarea:not(:placeholder-shown) ~ label {
+        left: 15px;
+        text-align: left;
+    }
+
+    .contact-info,
+    .contact-form-box {
+        width: 100%;
+    }
+
+    .contact-details span {
+        justify-content: left;
+    }
+
+    .contact-form-box {
+        text-align: center;
+    }
+
+    form {
+        align-items: center;
+    }
+    .contact-heading {
+        font-size: 2.5rem;
+    }
+       .contact-content p {
+        font-size: 1.1rem;
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .contact-info h1,
+    .contact-form-box h1 {
+        font-size: 2rem;
+    }
+    .form-button{
+        width: 100px;
+    }
+    .contact-info p {
+        font-size: 1.1rem;
+    }
+
+    .contact-details span {
+        font-size: 0.95rem;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 0.85rem;
+    }
+
+    .form-button {
+        width: 40%;
+        font-size: 0.9rem;
+    }
+}
+
+.form-result {
+    display: block;
+    color: #32a4b6;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  /* Success Message */
+  .form-result:contains("✅") {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+  
+  /* Error Message */
+  .form-result:contains("❌"), 
+  .form-result:contains("⚠️") {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+    width: 80%;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group label {
+    position: absolute;
+    left: 15px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #a8b2d1;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-group textarea ~ label {
+    top: 25px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(33, 150, 243, 0.1);
+}
+
+.form-input:focus ~ label,
+.form-textarea:focus ~ label,
+.form-input:not(:placeholder-shown) ~ label,
+.form-textarea:not(:placeholder-shown) ~ label {
+    top: -22px;
+    left: 0;
+    font-size: 14px;
+    color: #2196f3;
+}
+  
+
+.form-button {
+    width: 120px;  /* Fixed width instead of percentage */
+    padding: 12px 24px;
+    font-size: 1rem;
+  
+    background: linear-gradient(135deg, #ff4e8a, #ff9800);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-button:hover {
+    background: linear-gradient(135deg, #d82525, #ea8d02);
+    transform: scale(1.05);
+    border: 2px solid #ff4e8a;
+}
+
+.form-button:active {
+    transform: scale(0.95);
+}

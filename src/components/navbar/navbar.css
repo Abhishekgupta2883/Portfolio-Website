@@ -1,0 +1,299 @@
+/* ✅ Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    padding: 10px 30px;
+    /* Replace solid border with a gradient or subtle shadow */
+    border-bottom: none;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+}
+
+/* ✅ Navbar Logo */
+.navbar-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    left: 30px;
+    margin: 20px;
+    margin-left: 40px;
+    cursor: pointer;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* ✅ Hover Effect (Grows Smoothly) */
+.navbar-logo:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* ✅ Duplicate Logo (Appears in Center Smoothly) */
+.logo-expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    z-index: 1001;
+    transition: transform 0.5s ease-out;
+}
+
+/* ✅ Show Animation */
+.logo-expanded {
+    animation: expandLogo 0.5s forwards ease-out;
+}
+
+/* ✅ Clickable Overlay */
+.logo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* ✅ Navigation Links (Shifted by 80px from Logo) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    left: calc(30px + 60px + 80px);  /* 30px (logo left) + 60px (logo width) + 80px (gap) */
+    transform: translateX(0);
+    font-family: 'Poppins', sans-serif;  /* Modern, clean font */
+}
+
+.nav-item {
+    color: #e0e0e0;  /* Softer white color */
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 10px;
+    opacity: 0.8;
+}
+
+.nav-item:hover {
+    opacity: 1;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-item.active {
+    color: #ffffff;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+}
+/* ✅ Animation for Expanding Logo */
+@keyframes expandLogo {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Add these media queries at the end of your navbar.css file */
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+        position: fixed;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 100%;
+        width: 100%;
+        height: calc(100vh - 64px);
+        flex-direction: column;
+        background: rgba(17, 25, 40, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 60px 0 20px 0;  /* Added top padding */
+        transition: all 0.3s ease-in-out;
+        gap: 15px;
+        text-align: center;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;  /* Changed from center to flex-start */
+    }
+
+    .nav-item {
+        width: 100%;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+    .nav-links.active {
+        left: 0;  /* Changed from right to left */
+    }
+
+    .nav-item {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .nav-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+
+    .nav-item::after {
+        width: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100px;  /* Limit underline width */
+    }
+
+    .nav-item:hover::after,
+    .nav-item.active::after {
+        width: 80px;  /* Fixed width for underline */
+    }
+
+
+    .navbar-logo {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+    }
+
+    /* Add hamburger menu */
+    /* Add these styles for the menu icons */
+    .menu-icon {
+        display: none;  /* Hidden by default for desktop */
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+        font-size: 28px;
+        color: white;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .menu-icon:hover {
+        transform: scale(1.1);
+    }
+    
+    @media screen and (max-width: 768px) {
+        .menu-icon {
+            display: flex;
+        }
+    }
+
+    .nav-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+
+    .nav-item::after {
+        width: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100px;  /* Limit underline width */
+    }
+
+    .nav-item:hover::after,
+    .nav-item.active::after {
+        width: 80px;  /* Fixed width for underline */
+    }
+
+
+    .navbar-logo {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+    }
+
+    /* Add hamburger menu */
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+    }
+
+
+@media screen and (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .navbar {
+        padding: 5px 10px;
+        height: 60px;
+    }
+
+    .navbar-logo {
+        width: 45px;
+        height: 45px;
+        margin: 8px;
+        margin-left: 15px;
+    }
+
+    .nav-links {
+        top: 60px;
+        padding: 15px 0;
+    }
+
+    .nav-item {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+
+    .menu-icon {
+        right: 15px;
+        font-size: 22px;
+    }
+
+    .logo-expanded {
+        width: 300px;
+        height: 300px;
+    }
+}

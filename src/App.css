@@ -1,0 +1,77 @@
+body {
+    font-family: "Inter", sans-serif;
+   
+}
+
+p ,span{
+    color: #a8b2d1;  /* Increased opacity from #8892b0 */
+    line-height: 1.8;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+p:hover ,span:hover {
+    color: #cbd5e1;  /* Brighter hover state */
+}
+
+/* For emphasized paragraphs */
+p,span.highlight {
+    color: #7fffd4;  /* Brighter mint color */
+    font-weight: 500;
+}
+
+/* For secondary text */
+p,span.secondary {
+    color: #94a3b8;  /* Lighter secondary text */
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    p ,span{
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+h1, h2, h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.4;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.block{
+    animation : appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+
+}
+
+/* About section specific styles */
+
+#about-section p {
+    font-size: 1.1rem;
+   
+}
+
+@media (max-width: 768px) {
+     h1 {
+        font-size: 2rem;
+    }
+    
+    #about-section p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}

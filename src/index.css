@@ -1,0 +1,51 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #11071F;
+    background: linear-gradient(135deg, #0a0313, #041b2d);
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background: linear-gradient(135deg, #0a0313 0%, #041b2d 100%);
+        background-attachment: fixed;
+        background-size: 200% 200%;
+        animation: gradientMove 15s ease infinite;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+        background: linear-gradient(135deg, #0a0313 0%, #041b2d 100%);
+        background-attachment: fixed;
+        background-size: 150% 150%;
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

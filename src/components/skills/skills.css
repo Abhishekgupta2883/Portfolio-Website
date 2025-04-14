@@ -1,0 +1,43 @@
+@media screen and (max-width: 1024px) {
+    .skills-container {
+        margin: 100px 50px;
+        gap: 40px;
+    }
+
+    .skill-card {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .skills-container {
+        margin: 80px 20px;
+        gap: 30px;
+    }
+
+    .skill-card {
+        width: calc(50% - 15px);
+    }
+
+    .skill-title {
+        font-size: 1.8rem;
+    }
+
+    .skill-icon {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills-container {
+        margin: 60px 15px;
+    }
+
+    .skill-card {
+        width: 100%;
+    }
+
+    .skill-title {
+        font-size: 1.5rem;
+    }
+}
