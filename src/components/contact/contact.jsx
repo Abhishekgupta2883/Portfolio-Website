@@ -74,15 +74,15 @@ export default function Contact() {
 
         <div className="contact-details">
           <span>
-            <MailIcon className="icon" /> example@email.com
+            <MailIcon className="icon" /> ag8882138469@gmail.com
           </span>
           <br />
           <span>
-            <PhoneIcon className="icon" /> XXXXXXXXXX
+            <PhoneIcon className="icon" /> +91 8882138469
           </span>
           <br />
           <span>
-            <LocationOnIcon className="icon" /> Your City, Country
+            <LocationOnIcon className="icon" /> India
           </span>
         </div>
       </div>

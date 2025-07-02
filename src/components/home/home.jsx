@@ -53,8 +53,8 @@ export default function Home() {
                     while continuously improving myself through determination and a strong commitment to excellence."
                 </p>
                 
-                <a href="https://mui.com/material-ui/material-icons/?query=home" type="button" className="resume-btn">Linkedin</a>
-                <a href="https://mui.com/material-ui/material-icons/?query=home" type="button" className="resume-btn">Resume</a>
+                <a href="https://www.linkedin.com/in/abhishek-gupta-4b32a7291/" type="button" className="resume-btn">Linkedin</a>
+                <a href="https://drive.google.com/file/d/1des9wuxZhtWZ0iTMBxRZA9bEgpGT4KXI/view?usp=drivesdk" type="button" className="resume-btn">Resume</a>
             </div>
             <div className="image-wrapper">
                 <img src={cartoonImage} alt="Cartoon of Abhishek" className="profile-image" />

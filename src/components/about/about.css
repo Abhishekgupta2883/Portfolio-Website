@@ -148,13 +148,29 @@
     }
     .about-heading {
         text-align: left;
-       margin-left: 60px !important;
-       
+        margin-left: 20px !important;
+        margin-bottom: 20px;
         font-size: 2.2rem;
     }
     .about-content {
-        padding: 30px 35px;
-        margin: 20px;
+        padding: 15px 20px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .about-heading {
+        margin-left: 15px !important;
+        font-size: 2rem;
+        margin-bottom: 13px;
+    }
+    .about-container {
+        height: auto;
+        padding: 10px 0;
+    }
+    .about-content {
+        padding: 10px 15px;
+        margin: 5px;
     }
 }
 
